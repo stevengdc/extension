@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body { 
+                min-width: 640px; 
+                overflow-x: hidden; 
+                font-family: Arial, sans-serif; 
+                font-size: 12px; 
+            }
+            input, textarea { 
+                width: 640px; 
+            }
+            input#save { 
+                font-weight: bold; width: auto; 
+            }
+			table {
+				font-family: arial, sans-serif;
+				border-collapse: collapse;
+				width: 100%;
+			}
+
+			td, th {
+				border: 1px solid #A9A9A9;
+				text-align: left;
+				padding: 8px;
+			}
+        </style>
+        <script src="popup.js"></script>
+    </head>
+    <body>
+        <form id="addbookmark">
+            <p hidden><label for="title">Assignee</label><br />
+            <input type="text" id="title" name="title" size="50" value="" /></p>
+
+            <p hidden><label for="url">Url</label><br />
+            <input type="text" id="url" name="url" size="50" value="" /></p>
+
+			<p><label for="title">Choose the way you want to escalate this call:</label><br />
+				<select id="escalationOptions" name="escalationOptions">
+					<option value="0">Customer called to chase this call and wants to escalate it, can anyone take a look at this please, thanks.</option>
+					<option value="1">Option 2</option>
+					<option value="2">Option 3</option>
+				</select>
+			</p>
+			
+            <p><label for="summary">Description</label><br />
+            <textarea id="summary" name="summary" rows="4" cols="35"></textarea></p>
+
+            <p><label for="email">Email</label><br />
+            <textarea id="email" name="email" rows="15" cols="35"></textarea></p>
+
+            <p>
+                <input id="save" type="submit" value="Escalate Call" />
+                <span id="status-display"></span>
+            </p>
+        </form>
+    </body>
+</html>
